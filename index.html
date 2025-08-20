@@ -9,9 +9,10 @@
   <div class="auth-container">
     <!-- Login Form -->
     <form id="loginForm" class="form active">
-      <h2>Login</h2>
-      <p class="error" id="loginError">Invalid credentials</p>
-      <p class="success" id="loginSuccess">Login successful!</p>
+  <h2>Login</h2>
+  <!-- CHANGED: Success and error messages hidden by default, content set dynamically in JS -->
+  <p class="error" id="loginError" style="display:none">Invalid credentials</p>
+  <p class="success" id="loginSuccess" style="display:none"></p>
 
       <div class="input-group">
         <label for="loginUsername">Username</label>
@@ -38,9 +39,10 @@
 
     <!-- Signup Form -->
     <form id="signupForm" class="form">
-      <h2>Sign Up</h2>
-      <p class="error" id="signupError">Please fill in all fields correctly</p>
-      <p class="success" id="signupSuccess">Account created successfully!</p>
+  <h2>Sign Up</h2>
+  <!-- CHANGED: Success and error messages hidden by default, content set dynamically in JS -->
+  <p class="error" id="signupError" style="display:none">Please fill in all fields correctly</p>
+  <p class="success" id="signupSuccess" style="display:none"></p>
 
       <div class="input-group">
         <label for="signupUsername">Username</label>

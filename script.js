@@ -58,9 +58,19 @@ document.getElementById("signupBtn").addEventListener("click", () => {
   const error = document.getElementById("signupError");
   const success = document.getElementById("signupSuccess");
 
-  if (!username || !email || !password || password !== confirm) {
+  // Hide previous messages
+  error.style.display = "none";
+  success.style.display = "none";
+
+  // Validate all fields
+  if (!username || !email || !password || !confirm) {
+    error.textContent = "Please fill in all fields correctly";
     error.style.display = "block";
-    success.style.display = "none";
+    return;
+  }
+  if (password !== confirm) {
+    error.textContent = "Passwords do not match";
+    error.style.display = "block";
     return;
   }
 
@@ -68,14 +78,13 @@ document.getElementById("signupBtn").addEventListener("click", () => {
   if (users.find(u => u.username === username)) {
     error.textContent = "Username already exists";
     error.style.display = "block";
-    success.style.display = "none";
     return;
   }
 
   users.push({ username, email, password });
   localStorage.setItem("users", JSON.stringify(users));
 
-  error.style.display = "none";
+  success.textContent = "Account created successfully!";
   success.style.display = "block";
   signupForm.reset();
 });
@@ -88,21 +97,33 @@ document.getElementById("loginBtn").addEventListener("click", () => {
   const error = document.getElementById("loginError");
   const success = document.getElementById("loginSuccess");
 
+  // Hide previous messages
+  error.style.display = "none";
+  success.style.display = "none";
+
+  // Validate fields
+  if (!username || !password) {
+    error.textContent = "Please enter both username and password";
+    error.style.display = "block";
+    return;
+  }
+
   let users = JSON.parse(localStorage.getItem("users")) || [];
   const user = users.find(u => u.username === username && u.password === password);
 
   if (!user) {
+    error.textContent = "Invalid credentials";
     error.style.display = "block";
-    success.style.display = "none";
-  } else {
-    error.style.display = "none";
-    success.style.display = "block";
+    return;
+  }
 
-    if (remember) {
-      localStorage.setItem("rememberedUser", username);
-    } else {
-      localStorage.removeItem("rememberedUser");
-    }
+  success.textContent = "Login successful!";
+  success.style.display = "block";
+
+  if (remember) {
+    localStorage.setItem("rememberedUser", username);
+  } else {
+    localStorage.removeItem("rememberedUser");
   }
 });
 
