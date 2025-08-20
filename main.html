@@ -2,37 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Support Center</title>
-  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="style2.css ">
 </head>
 <body>
   <nav class="navbar">
     <div class="logo">Support Center</div>
-    <ul class="nav-links">
+    
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <ul class="nav-links" id="navLinks">
       <li><a href="#">Home</a></li>
       <li><a href="#">Knowledge Base</a></li>
       <li><a href="#">Community</a></li>
       <li><a href="#">Contact Us</a></li>
     </ul>
+    
     <div class="profile">
       <img src="https://i.pravatar.cc/40" alt="User" class="profile-img">
     </div>
   </nav>
+
   <div class="container">
     <h2>Raise Your Support Ticket</h2>
-
+     
     <div class="banner">
       <img src="https://picsum.photos/800/200" alt="Banner">
     </div>
-
-
+      
     <form class="support-form">
       <label for="name">Name</label>
       <input type="text" id="name" placeholder="Enter your name">
-
+       
       <label for="email">Email</label>
       <input type="email" id="email" placeholder="Enter your email">
-
+       
       <label for="type">Problem Type</label>
       <select id="type">
         <option>Select</option>
@@ -41,12 +50,13 @@
         <option>Bug Report</option>
         <option>Other</option>
       </select>
-
+       
       <label for="desc">Issue Description</label>
       <textarea id="desc" rows="4" placeholder="Describe your issue..."></textarea>
+      
+      <button type="submit" class="submit-btn">Submit Ticket</button>
     </form>
-
-  
+        
     <div class="tracker">
       <div class="progress">
         <div class="progress-bar"></div>
@@ -59,10 +69,10 @@
     </div>
   </div>
 
-
   <footer>
     <p>©2024 Support Center. All rights reserved.</p>
   </footer>
 
+  <script src="script3.js"></script>
 </body>
 </html>
