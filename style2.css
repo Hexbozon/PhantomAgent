@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #4facfe;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+/* Container */
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+}
+
+/* Banner */
+.banner img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Form */
+.support-form {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.support-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 14px;
+}
+
+.support-form input,
+.support-form select,
+.support-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #f7f9fb;
+}
+
+/* Ticket Tracker */
+.tracker {
+  margin-top: 20px;
+}
+
+.progress {
+  width: 100%;
+  height: 6px;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  width: 30%; /* Step progress */
+  height: 100%;
+  background: #333;
+}
+
+.tracker-steps {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  margin-top: 50px;
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  color: #777;
+  border-top: 1px solid #ddd;
+}
